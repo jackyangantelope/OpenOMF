@@ -1,0 +1,7 @@
+/* Reserve the upper 32 KiB of main SRAM for Core0. Heap/data cannot enter it.
+ * Core1 retains SCRATCH_X. Core0 no longer grows into Core1's live stack. */
+MEMORY
+{
+    RAM(rwx) : ORIGIN = RAM_ORIGIN, LENGTH = RAM_LENGTH - 0x8000
+    XU4_STACK(rw) : ORIGIN = RAM_ORIGIN + RAM_LENGTH - 0x8000, LENGTH = 0x8000
+}

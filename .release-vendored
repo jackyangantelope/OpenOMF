@@ -1,0 +1,5 @@
+deps/openomf
+deps/native-headers
+deps/pico_shared
+deps/libs
+platform/generated
